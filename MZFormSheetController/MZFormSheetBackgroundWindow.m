@@ -56,6 +56,7 @@ static UIInterfaceOrientationMask const UIInterfaceOrientationMaskFromOrientatio
 
 @interface MZFormSheetBackgroundWindow()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
+@property (nonatomic, strong) UIVisualEffectView *visualEffectView;
 @property (nonatomic, assign, getter = isUpdatingBlur) BOOL updatingBlur;
 @property (nonatomic, assign) UIInterfaceOrientation lastWindowOrientation;
 @end
@@ -215,11 +216,19 @@ static UIInterfaceOrientationMask const UIInterfaceOrientationMaskFromOrientatio
         [appearance applyInvocationTo:self];
 
         _supportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
+		
+		_supportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
+		
+		_visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+		_visualEffectView.frame = frame;
+		_visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+		
+		[self addSubview:_visualEffectView];
 
-        _backgroundImageView = [[UIImageView alloc] initWithFrame:frame];
-        _backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-
-        _backgroundImageView.image = _backgroundImage;
+//        _backgroundImageView = [[UIImageView alloc] initWithFrame:frame];
+//        _backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//
+//        _backgroundImageView.image = _backgroundImage;
 
         [self addSubview:_backgroundImageView];
 
