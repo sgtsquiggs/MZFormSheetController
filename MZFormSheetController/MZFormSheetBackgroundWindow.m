@@ -229,10 +229,10 @@ static UIInterfaceOrientationMask const UIInterfaceOrientationMaskFromOrientatio
 //        _backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 //
 //        _backgroundImageView.image = _backgroundImage;
-
-        [self addSubview:_backgroundImageView];
-
-        [_backgroundImageView addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionNew context:NULL];
+//
+//        [self addSubview:_backgroundImageView];
+//
+//        [_backgroundImageView addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionNew context:NULL];
 
         [self rotateWindow];
 
@@ -327,9 +327,9 @@ static UIInterfaceOrientationMask const UIInterfaceOrientationMaskFromOrientatio
 
 - (void)updateBlurUsingContext:(BOOL)useContext
 {
-    UIImage *blurredImage = [[MZFormSheetBackgroundWindow screenshotUsingContext:useContext] blurredImageWithRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.blurSaturation maskImage:self.blurMaskImage];
-
-    self.backgroundImageView.image = [self rotateImageToStatusBarOrientation:blurredImage];
+//    UIImage *blurredImage = [[MZFormSheetBackgroundWindow screenshotUsingContext:useContext] blurredImageWithRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.blurSaturation maskImage:self.blurMaskImage];
+//
+//    self.backgroundImageView.image = [self rotateImageToStatusBarOrientation:blurredImage];
 }
 
 
