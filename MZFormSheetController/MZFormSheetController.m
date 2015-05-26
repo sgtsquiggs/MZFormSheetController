@@ -194,7 +194,7 @@ static BOOL MZFromSheetControllerIsViewControllerBasedStatusBarAppearance(void) 
         } else if (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
             
             return CGPointMake(windowSize.width-point.x, windowSize.height-point.y);
-        }        
+        }
     }
     return point;
 }
@@ -331,7 +331,7 @@ static BOOL MZFromSheetControllerIsViewControllerBasedStatusBarAppearance(void) 
 + (MZFormSheetBackgroundWindow *)sharedBackgroundWindow
 {
     if (!_instanceOfFormSheetBackgroundWindow) {
-        _instanceOfFormSheetBackgroundWindow = [[MZFormSheetBackgroundWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _instanceOfFormSheetBackgroundWindow = [[MZFormSheetBackgroundWindow alloc] initWithFrame:CGRectMake(-512, -512, 1536, 1536)];
     }
 
     return _instanceOfFormSheetBackgroundWindow;
